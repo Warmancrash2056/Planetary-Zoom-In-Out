@@ -1,0 +1,11 @@
+2a60927148abd1d33b818b535e306557
+::res://::1678846138
+::res://Scenes/::1678843097
+Zoom In and Out.gd::GDScript::-1::1678843097::0::1::::<>Node3D<>::
+Zoom In and Out.tscn::PackedScene::1829645050569177541::1678843097::0::1::::<><>::res://Scenes/Zoom In and Out.gd<>uid://dj6dq7mu7pi5h
+::res://Scripts/::1678839774
+Camera Zoom In & Out.gd::GDScript::-1::1678839774::0::1::::<>Camera3D<>::
+Fps Counter Script.gd::GDScript::-1::1678839774::0::1::::<>RichTextLabel<>::
+Planet Orbit.gd::GDScript::-1::1678839774::0::1::::<>StaticBody3D<>::
+::res://Texture/::1678839838
+Planet Texture.png::CompressedTexture2D::7855169778115154075::1678839774::1678839838::1::::<><>::

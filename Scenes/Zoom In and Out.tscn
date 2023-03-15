@@ -1,9 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://1cj8suaqrnw4"]
+[gd_scene load_steps=9 format=3 uid="uid://1cj8suaqrnw4"]
 
-[ext_resource type="Script" path="res://Scripts/Planet Orbit.gd" id="1_bcux5"]
+[ext_resource type="Script" path="res://Scenes/Zoom In and Out.gd" id="1_bl7v4"]
 [ext_resource type="Texture2D" uid="uid://dj6dq7mu7pi5h" path="res://Texture/Planet Texture.png" id="2_snksn"]
-[ext_resource type="Script" path="res://Scripts/Camera Zoom In & Out.gd" id="3_x37ax"]
-[ext_resource type="Script" path="res://Scripts/Fps Counter Script.gd" id="4_xwvvp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1tj6r"]
 sky_top_color = Color(0.113725, 0.145098, 0.188235, 1)
@@ -33,26 +31,25 @@ metallic_texture = ExtResource("2_snksn")
 roughness_texture = ExtResource("2_snksn")
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_bl7v4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k73pn")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-script = ExtResource("1_bcux5")
+[node name="Saturn" type="StaticBody3D" parent="."]
+transform = Transform3D(9.73643, 1.19548, 1.94234, -1.21869, 9.92546, 0, -1.92787, -0.236712, 9.80955, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Saturn"]
 shape = SubResource("SphereShape3D_ija45")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Saturn"]
 mesh = SubResource("SphereMesh_hnomr")
 surface_material_override/0 = SubResource("StandardMaterial3D_lmdbc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 40, 50)
 current = true
-fov = 50.0
-script = ExtResource("3_x37ax")
+fov = 120.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 200, 0)
@@ -65,8 +62,21 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+[node name="Description" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("4_xwvvp")
+offset_left = 778.0
+offset_top = 165.0
+offset_right = 1067.0
+offset_bottom = 299.0
+text = "Planet: Jupiter
+Distance From Sun: 460 Million Miles 
+Solar Order From the Sun: 6th Planet
+Expected Age: 4.06 Billion Years Old
+Orbital Period: 12 Years"
+
+[node name="Distance" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 11.0
+offset_right = 470.0
+offset_bottom = 51.0
